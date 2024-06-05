@@ -1,0 +1,9 @@
+<% include ./partials/header.ejs %>
+    <div class="post w-full bg-zinc-300 h-screen flex items-center justify-center">
+        <form class="bg-zinc-50 h-[50%] flex flex-col p-4 gap-10  " action="/createPost" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="text" class="border-2 border-black px-3 py-2" name="caption" placeholder="Add a Caption ...">
+            <button class="px-4 py-2 bg-red-700 rounded-full text-white ">Post</button>
+        </form>
+    </div>
+<% include ./partials/footer.ejs %>

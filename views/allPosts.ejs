@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+<div class="allposts w-full bg-zinc-400 p-4 flex flex-wrap gap-10  ">
+  <% user.posts.forEach((elem, index) => {%>
+    <div class="post w-[15%] p-2 bg-zinc-300 flex flex-col items-center -center text-justify">
+        <div class="img w-full object-cover object-center">
+            <img src="/posts/<%= elem.postImage %>" alt="post">
+        </div>
+        <div class="info p-2">
+            <h2><%= elem.caption %></h2>
+        </div>
+    </div>
+<% }) %>
+
+</div>
+<% include ./partials/footer.ejs %>

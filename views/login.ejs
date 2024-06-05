@@ -1,0 +1,48 @@
+<% include ./partials/header.ejs %>
+<div
+  class="login-page w-full h-screen bg-zinc-300 flex items-center justify-center"
+>
+  <div
+    class="w-[300px] rounded-lg login-form bg-zinc-100 px-2 py-4 flex flex-col items-center justify-center gap-5"
+  >
+    <div class="logo w-[40px] h-[40px] rounded-full">
+      <img
+        src="/images/logo.png"
+        class="w-full h-full object-cover object-center"
+        alt="logo"
+      />
+    </div>
+    <h3 class="font-bold text-xl">Login to see more</h3>
+    <div class="form w-full p-4">
+      <form
+        action="/login"
+        method="post"
+        class="flex flex-col items-center gap-5"
+      >
+        <input
+          class="w-[100%] rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="username"
+          type="text"
+          placeholder="Username"
+        />
+        <input
+          class="w-[100%] rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <button
+          class="block px-4 py-2 bg-red-700 rounded-full text-white font-bold"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+    <h3>
+      Not on pinterest yet?
+      <a class="text-blue-800" href="/register">Sign Up</a>
+    </h3>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

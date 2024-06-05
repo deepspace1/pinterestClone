@@ -1,0 +1,66 @@
+<% include ./partials/header.ejs %>
+<div
+  class="login-page w-full h-screen bg-zinc-300 flex items-center justify-center"
+>
+  <div
+    class="w-[450px] rounded-lg login-form bg-zinc-100 px-2 py-4 flex flex-col items-center justify-center gap-3"
+  >
+    <div class="logo w-[40px] h-[40px] rounded-full">
+      <img
+        src="/images/logo.png"
+        class="w-full h-full object-cover object-center"
+        alt="logo"
+      />
+    </div>
+    <h3 class="font-bold text-xl">Welcome to Pinterest</h3>
+    <h2 class="text-[20px]">Sign up to see more</h2>
+    <div class="form w-full p-4">
+      <form
+        action="/register"
+        method="POST"
+        class="flex flex-col items-center gap-5"
+      >
+        <input
+          class="w-full rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="username"
+          type="text"
+          placeholder="Username"
+        />
+        <input
+          class="w-full rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="email"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          class="w-full rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="phone"
+          type="number"
+          placeholder="Phone"
+        />
+        <input
+          class="w-full rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          class="w-full rounded-full block px-4 py-3 border-zinc-600 border-[1px]"
+          name="fullname"
+          type="text"
+          placeholder="FullName"
+        />
+        <button
+          class="block px-4 py-2 bg-red-700 rounded-full text-white font-bold"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+    <h3>
+      Already have an account? <a class="text-blue-800" href="/login">Login</a>
+    </h3>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

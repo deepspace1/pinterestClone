@@ -1,0 +1,47 @@
+<%include ./partials/header.ejs %>
+
+<div class="dpEdit">
+    <form id="form" class="hidden" action="/uploadDp" method="post" enctype="multipart/form-data">
+        <input id="editDp" type="file" name="file">
+    </form>
+</div>
+<div
+  class="profile-div flex flex-col items-center justify-center w-full bg-zinc-800 p-4 text-zinc-100"
+>
+  <div class="profile w-[70%] flex flex-col items-center justify-center gap-4">
+    <div class="relative dp w-[130px] h-[130px] rounded-full bg-zinc-100">
+      <img src="/dp/<%= user?.dp%>" alt="dp" class="rounded-full w-full h-full object-cover object-center">
+        <i class="cursor-pointer absolute bottom-0 right-0 w-[20px] text-xl h-[20px] flex items-center justify-center bg-zinc-400 p-5 rounded-full ri-pencil-line"></i>
+    </div>
+    <h2 class="font-bold text-xl"><%= user.username%></h2>
+    <h3 class="opacity-80 text-[13px]"><%= user.email%></h3>
+    <h3 class="opacity-90 w-[70%] text-center">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quas
+      cupiditate dicta? Consequatur eligendi nulla aspernatur sunt expedita
+      doloremque asperiores.
+    </h3>
+    <a href="/createPost" class="bg-red-700 px-7 py-3 text-white rounded-full font-bold">Create New Post</a>
+  </div>
+</div>
+<div class="user-posts w-full p-4 bg-zinc-500">
+  <a href="/allPosts" class="post w-[15%] p-2 bg-zinc-300 flex flex-col items-center justify-center text-justify">
+    <div class="img w-full object-cover object-center">
+      <img src="/posts/<%=user?.posts[0]?.postImage%>" alt="post">
+    </div>
+    <div class="info p-2">
+      <h2>Your Posts</h2>
+      <h3><%=user?.posts?.length%> posts</h3>
+    </div>
+  </a>
+</div>
+
+<script>
+    document.querySelector("i").addEventListener("click", function(){
+       document.querySelector("#editDp").click();
+    });
+
+    document.querySelector("#form #editDp").addEventListener("input", function(){
+        document.querySelector("#form").submit();
+    })
+</script>
+<%include ./partials/footer.ejs %>

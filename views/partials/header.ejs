@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% if(nav === true) { %>
+    <div
+      class="nav bg-zinc-900 w-full flex items-center justify-between text-zinc-100 font-bold p-4"
+    >
+      <div class="left">
+        <div class="logo"></div>
+        <h3>Pinterest</h3>
+      </div>
+      <div class="right flex items-center justify-center gap-10">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <% if (buttonText === "Logout") { %>
+        <a
+          href="/logout"
+          class="btn bg-red-700 px-5 py-2 text-white rounded-full"
+          ><%= buttonText %></a
+        >
+        <% } else { %>
+        <a
+          href="/login"
+          class="btn bg-red-700 px-5 py-2 text-white rounded-full"
+          >Login</a
+        >
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>
